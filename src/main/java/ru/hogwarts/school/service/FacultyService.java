@@ -17,8 +17,6 @@ public interface FacultyService {
 
     void deleteFaculty ( Long id );
 
-    Collection<Student> readFacultyStudents ( Faculty faculty );
-
     Faculty findFacultyByColorOrNameIgnoreCase ( String color, String name );
 
 

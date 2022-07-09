@@ -24,10 +24,6 @@ public class FacultyServiceImpl implements FacultyService {
         return facultyRepository.findById(id).orElseThrow();
     }
 
-    public Collection<Student> readFacultyStudents ( Faculty faculty ) {
-        return faculty.getStudents();
-    }
-
     public Faculty updateFaculty ( Faculty faculty ) {
         return facultyRepository.save(faculty);
     }

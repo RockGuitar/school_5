@@ -27,11 +27,6 @@ public class StudentController {
         return studentService.findByAgeBetween(minAge, maxAge);
     }
 
-    @GetMapping
-    public Faculty readStudentFaculty ( @RequestParam Long studentKey ) {
-        return studentService.readStudentFaculty(studentKey);
-    }
-
     @PostMapping()
     public Student createStudent ( @RequestBody Student student ) {
         return studentService.createStudent(student);
@@ -42,9 +37,9 @@ public class StudentController {
         return studentService.updateStudent(student);
     }
 
-    @DeleteMapping
-    public void deleteStudent ( @RequestParam("key") Long studentKey ) {
-        studentService.deleteStudent(studentKey);
+    @DeleteMapping("{id}")
+    public void deleteStudent ( @PathVariable Long id ) {
+        studentService.deleteStudent(id);
     }
 }
 

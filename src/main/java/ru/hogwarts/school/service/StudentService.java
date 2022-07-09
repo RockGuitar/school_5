@@ -17,7 +17,5 @@ public interface StudentService {
 
     void deleteStudent ( Long id );
 
-    Faculty readStudentFaculty ( Long id );
-
     Collection<Student> findByAgeBetween ( int min, int max );
 }

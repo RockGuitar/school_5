@@ -24,10 +24,6 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findById(id).orElseThrow();
     }
 
-    public Faculty readStudentFaculty ( Long id ) {
-        Student searchStudent = studentRepository.findById(id).orElseThrow();
-        return searchStudent.getFaculty();
-    }
 
     public Student updateStudent ( Student student ) {
         return studentRepository.save(student);
