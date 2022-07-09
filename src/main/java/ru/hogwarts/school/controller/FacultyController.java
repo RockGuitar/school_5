@@ -26,11 +26,6 @@ public class FacultyController {
         return facultyService.findFacultyByColorOrNameIgnoreCase(color, name);
     }
 
-    @GetMapping()
-    public Collection<Student> readFacultyStudents ( @RequestBody Faculty faculty ) {
-        return facultyService.readFacultyStudents(faculty);
-    }
-
     @PostMapping()
     public Faculty createFaculty ( @RequestBody Faculty faculty ) {
         return facultyService.createFaculty(faculty);
@@ -41,8 +36,8 @@ public class FacultyController {
         return facultyService.updateFaculty(faculty);
     }
 
-    @DeleteMapping
-    public void deleteFaculty ( @RequestParam("key") Long facultyKey ) {
-        facultyService.deleteFaculty(facultyKey);
+    @DeleteMapping("{id}")
+    public void deleteFaculty ( @PathVariable Long id ) {
+        facultyService.deleteFaculty(id);
     }
 }
